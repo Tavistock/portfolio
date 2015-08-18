@@ -1,0 +1,10 @@
+@import 'bower_components/gridle/sass/gridle/gridle';
+
+$settings: (
+  context : 12,
+  gutter-width : 20px
+);
+
+@include gridle_setup($settings);
+
+@include gridle_register_default_mobile_first_states();

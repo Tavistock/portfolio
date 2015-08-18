@@ -1,0 +1,152 @@
+// bower:scss
+// endbower
+
+@import 'bower_components/normalize.css/normalize';
+
+@import 'settings';
+@import 'typography';
+@import 'variables';
+@import 'stars';
+
+body, html {
+  margin: 0;
+  padding: 0;
+  color: $white;
+}
+
+body {
+  background-color: $primary;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+}
+
+.header {
+  @include gridle(12);
+  position: relative;
+  text-align: center;
+  color: $white;
+  & > * {
+    text-align: center;
+
+  }
+  h1 {
+    margin-top: 150px;
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  &__social {
+    list-style: none;
+    > li {
+      display: inline-block;
+       a {
+           color: $transparent;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+    padding: 0;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+}
+
+.about, .skills, .projects {
+  & > * {
+    text-align: center;
+  }
+  > h3 {
+    &::after{
+      content: '';
+      margin: 0 auto;
+      margin-top: 10px;
+      display: block;
+      width: 90px;
+      height: 2px;
+      background-color: $accent;
+    }
+  }
+  > p {
+    @include gridle(10);
+    @include gridle_prefix(1);
+    @include gridle_suffix(1);
+  }
+}
+
+.about, .skills {
+  @include gridle(12);
+  @include gridle_state(md) {
+    @include gridle(6);
+  }
+  padding-top: 20px;
+}
+
+.about {
+  text-align: center;
+  button {
+    min-width: 120px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 6px;
+    border: $accent solid 2px;
+    &:hover {
+      color: $white;
+      background-color: $transparent;
+    }
+    &:active {
+      background-color: $accent;
+      color: $white;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.projects {
+  clear: left;
+  @include gridle(12);
+  a {
+    color: $transparent;
+    &:hover {
+      color: $white;
+    }
+    &::before {
+      color: $accent;
+      content: "⇝ "
+    }
+  }
+  > div {
+    @include gridle(12);
+    @include gridle_state(md) {
+      @include gridle(4);
+    }
+    margin-bottom: 40px;
+  }
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-top: 100px;
+  float: left;
+  color: transparentize($white, .9)
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}

@@ -1,0 +1,45 @@
+@mixin title-bold-font {
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+@mixin title-font {
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+@mixin body-font {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+html, p, .p {
+  font-size: 12px;
+  @include body-font;
+}
+
+h1, .h1 {
+  font-size: 24px;
+  letter-spacing: 10px;
+  @include title-bold-font;
+}
+
+h2, .h2 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  @include title-font;
+}
+
+h3, .h3 {
+  font-size: 18px;
+  @include title-font;
+}
+
+h4, .h4 {
+  font-size: 12px;
+  @include title-font;
+}
+
+@include gridle_state(md) {
+}
